@@ -1,0 +1,164 @@
+object Form5: TForm5
+  Left = 431
+  Height = 433
+  Top = 322
+  Width = 665
+  Caption = 'Transaksi'
+  ClientHeight = 0
+  ClientWidth = 0
+  Color = clTeal
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 224
+    Height = 22
+    Top = 24
+    Width = 178
+    Caption = 'Transaksi Penjualan'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = '@Adobe Fangsong Std R'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 97
+    Height = 19
+    Top = 74
+    Width = 131
+    Caption = 'Tabel Transaksasi'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = '@Adobe Fangsong Std R'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 96
+    Height = 120
+    Top = 104
+    Width = 424
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object Label3: TLabel
+    Left = 103
+    Height = 21
+    Top = 248
+    Width = 86
+    Caption = 'Tabel Harga'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Segoe UI Semibold'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBGrid2: TDBGrid
+    Left = 97
+    Height = 124
+    Top = 272
+    Width = 424
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource2
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 272
+    Height = 25
+    Top = 64
+    Width = 75
+    Caption = 'Laporan'
+    OnClick = Button1Click
+    TabOrder = 2
+  end
+  object frReport1: TfrReport
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    Left = 448
+    Top = 48
+  end
+  object frDBDataSet1: TfrDBDataSet
+    DataSet = ZQuery1
+    Left = 496
+    Top = 56
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'barang_aplikasi'
+    User = 'root'
+    Protocol = 'mysql-5'
+    LibraryLocation = 'D:\Semester 5\mysql-5.7.44-winx64\mysql-5.7.44-winx64\lib\libmysql.dll'
+    Left = 148
+    Top = 167
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM transaksi'
+    )
+    Params = <>
+    Left = 224
+    Top = 168
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 296
+    Top = 168
+  end
+  object ZConnection2: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'barang_aplikasi'
+    User = 'root'
+    Protocol = 'mysql-5'
+    LibraryLocation = 'D:\Semester 5\mysql-5.7.44-winx64\mysql-5.7.44-winx64\lib\libmysql.dll'
+    Left = 164
+    Top = 334
+  end
+  object ZQuery2: TZQuery
+    Connection = ZConnection2
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM harga_barang'
+    )
+    Params = <>
+    Left = 229
+    Top = 331
+  end
+  object DataSource2: TDataSource
+    DataSet = ZQuery2
+    Left = 302
+    Top = 335
+  end
+end

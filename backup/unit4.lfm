@@ -1,0 +1,143 @@
+object Form4: TForm4
+  Left = 568
+  Height = 385
+  Top = 178
+  Width = 693
+  Caption = 'Master detail data'
+  ClientHeight = 385
+  ClientWidth = 693
+  Color = clTeal
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 248
+    Height = 22
+    Top = 8
+    Width = 169
+    Caption = 'Master/Detail Data'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = '@Adobe Fangsong Std R'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 264
+    Height = 167
+    Top = 73
+    Width = 408
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource2
+    TabOrder = 0
+  end
+  object DBGrid2: TDBGrid
+    Left = 40
+    Height = 167
+    Top = 73
+    Width = 200
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object Label2: TLabel
+    Left = 48
+    Height = 19
+    Top = 48
+    Width = 107
+    Caption = 'Tabel Kategori'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = '@Adobe Fangsong Std R'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 327
+    Height = 19
+    Top = 48
+    Width = 90
+    Caption = 'Data Barang'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = '@Adobe Fangsong Std R'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'barang_aplikasi'
+    User = 'root'
+    Protocol = 'mysql-5'
+    LibraryLocation = 'D:\Semester 5\mysql-5.7.44-winx64\mysql-5.7.44-winx64\lib\libmysql.dll'
+    Left = 72
+    Top = 280
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM kategori_barang'
+    )
+    Params = <>
+    Left = 144
+    Top = 280
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 208
+    Top = 280
+  end
+  object ZConnection2: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'barang_aplikasi'
+    User = 'root'
+    Protocol = 'mysql-5'
+    LibraryLocation = 'D:\Semester 5\mysql-5.7.44-winx64\mysql-5.7.44-winx64\lib\libmysql.dll'
+    Left = 340
+    Top = 285
+  end
+  object ZQuery2: TZQuery
+    Connection = ZConnection2
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM data_barang'
+    )
+    Params = <>
+    Left = 416
+    Top = 280
+  end
+  object DataSource2: TDataSource
+    DataSet = ZQuery2
+    Left = 488
+    Top = 285
+  end
+end
