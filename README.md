@@ -7,5 +7,5 @@
 <p>Dosen Pengampu : Agung Nugroho,S.Kom.,M.Kom</p>
 
 <h2>Demo Aplikasi</h2>
-<p>Link yt : https://youtu.be/tFstuIB_k8c</p>
+<p>Link yt :https://youtu.be/EMwDgA6CI7g?si=ou96LzJeKjp4WUjD </p>
 
